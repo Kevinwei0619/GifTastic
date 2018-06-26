@@ -18,3 +18,55 @@ img {
     margin: 5px;
 
 }
+
+#test1,#test3,#test5,#test7,#test9{
+
+     background-color:lavender;
+  
+}
+
+
+#test2,#test4,#test6,#test8,#test10{
+
+   
+   background-color:lavenderblush;
+}
+
+
+@media only screen and (max-width:1200px ){
+  img{
+
+    border: 0px black solid;
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+
+  }
+
+}
+
+
+@media only screen and (max-width:993px ){
+    img{
+  
+      border: 0px black solid;
+      height: 100px;
+      width: 100px;
+      margin: 2px;
+  
+    }
+  
+  }
+
+
+@media only screen and (max-width:769px ){
+    img{
+  
+      border: 0px black solid;
+      height: 80px;
+      width: 80px;
+      margin: 1px;
+  
+    }
+  
+  }

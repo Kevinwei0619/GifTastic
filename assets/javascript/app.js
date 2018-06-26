@@ -8,9 +8,10 @@ function readButton() {
     $("#viewButton").empty();
 
 
+
     for (var i = 0; i < topic.length; i++) {
         var newButton = $("<button>");
-        newButton.addClass("test-button");
+        newButton.addClass("test-button btn btn-outline-primary");
         newButton.text(topic[i]);
         newButton.attr("data-val", topic[i]);
         $("#viewButton").append(newButton);
@@ -23,6 +24,7 @@ function readButton() {
 function displayGif() {
 
     $("img").remove(".dataImg");
+    $("p").remove();
     count = 1;
 
 
@@ -44,6 +46,8 @@ function displayGif() {
             console.log(respone);
             console.log(queryURL);
             var newImage = $("<img>");
+            var newP = $("<p>")
+           
 
             newImage.attr("src", respone.data[i].images.fixed_height_still.url).addClass("dataImg");
             newImage.attr("data-animate", respone.data[i].images.fixed_height.url);
@@ -51,7 +55,9 @@ function displayGif() {
             newImage.attr("data-state", "still");
             newImage.attr("id" , "img"+count);
 
-            $("#test" + count).append(newImage);
+            newP.text( "The Rating is: "+ respone.data[i].rating)
+        
+            $("#test" + count).append(newP , newImage);
             count++
             console.log("test");
             console.log(count);
@@ -69,15 +75,14 @@ $("#addSomething").on("click", function (event) {
     event.preventDefault();
 
     var newdata = $("#newData").val().trim();
-
-
-
     if (newdata == "") {
-        alert("add something");
+        alert("Add something");
 
     } else {
         topic.push(newdata);
         readButton();
+        $("#newData").val("");
+
 
     }
 });
